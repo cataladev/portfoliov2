@@ -17,6 +17,25 @@ const geistMono = localFont({
 export const metadata: Metadata = {
   title: "Carlos Catala",
   description: "Carlos Catala is a undergraduate student at the University of Central Florida and an aspiring software engineer.",
+  keywords:[
+        "Carlos Catala",
+        "UCF",
+        "University of Central Florida",
+        "Student",
+        "Software Engineer",
+        "Web Development",
+        "KnightHacks",
+        "Hackathons",
+        "Programming",
+        "Fullstack",
+    ],
+    openGraph: {
+      type: "website",
+      title: "Carlos Catala",
+      description:
+      "Carlos Catala is a undergraduate student at the University of Central Florida and an aspiring software engineer.",
+      url: "https://catala.dev",
+      },
 };
 
 export default function RootLayout({
