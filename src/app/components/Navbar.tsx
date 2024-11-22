@@ -15,12 +15,12 @@ const Navbar = () => {
             link: '/projects'
         },
         {
-            name: 'Skills',
-            link: '/skills'
-        },
-        {
             name: 'Experience',
             link: '/experience'
+        },
+        {
+            name: 'Skills',
+            link: '/skills'
         },
         {
             name: 'Github',
@@ -43,7 +43,7 @@ const Navbar = () => {
                             const isActive = path === menu.link;
                             return(
                                 <li key={menu.link}> 
-                                    <Link href={menu.link} className={isActive ? "m-2" : "m-2"}>
+                                    <Link href={menu.link} className={isActive ? "m-3" : "m-3"}>
                                         {menu.name === 'LinkedIn' ? (
                                             <Image src="/linkedin.svg" alt="LinkedIn" width={25} height={25} className="inline-block" />
                                         ) : menu.name === 'Github' ? (
