@@ -55,7 +55,7 @@ const Navbar = () => {
                             const isActive = path === menu.link;
                             return(
                                 <li key={menu.link}> 
-                                    <Link href={menu.link} className={isActive ? "m-3" : "m-3"}>
+                                    <Link href={menu.link} className={isActive ? "m-3" : "m-3"} target={menu.name === 'LinkedIn' || menu.name === 'Github' ? "_blank" : "_self"} rel={menu.name === 'LinkedIn' || menu.name === 'Github' ? "noopener noreferrer" : undefined}>
                                         {menu.name === 'LinkedIn' ? (
                                             <Image src="/linkedin.svg" alt="LinkedIn" width={25} height={25} className="inline-block" />
                                         ) : menu.name === 'Github' ? (
