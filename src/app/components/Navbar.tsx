@@ -19,6 +19,10 @@ const Navbar = () => {
             link: '/skills'
         },
         {
+            name: 'Experience',
+            link: '/experience'
+        },
+        {
             name: 'Github',
             link: 'https://github.com/cataladev'
         },
@@ -38,7 +42,7 @@ const Navbar = () => {
                     menuItem.map(menu => {
                             const isActive = path === menu.link;
                             return(<li key = {menu.link}> 
-                            <Link href = {menu.link} className = {isActive?"m-2":"m-2  to-blue-900 "}>{menu.name}</Link> 
+                            <Link href = {menu.link} className = {isActive?"m-2":"m-2"}>{menu.name}</Link > {/* Add hover effect and different color based on what is active */} 
                             </li>
                     )})
                     }

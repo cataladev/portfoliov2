@@ -4,7 +4,7 @@ import React from "react";
 
 export default function Home() {
   return (
-    <div className="flex flex-col text-6xl min-h-screen items-center justify-center pb-32 font-extrabold">
+    <div className="flex flex-col text-6xl min-h-screen items-center justify-center pb-32 font-mono">
       <div className="flex items-center">
         <h1> Hey, I'm Carlos! </h1>
         <Image src="/goober.png" alt="gatito" width={200} height={200} />
