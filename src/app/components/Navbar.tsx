@@ -23,6 +23,10 @@ const Navbar = () => {
             link: '/experience'
         },
         {
+            name: 'Resume',
+            link: '/resume.pdf'
+        },
+        {
             name: 'Github',
             link: 'https://github.com/cataladev'
         },
