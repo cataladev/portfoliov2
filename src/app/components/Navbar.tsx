@@ -1,10 +1,21 @@
 'use client';
-import React from 'react';
+import React, { useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import Image from 'next/image';
+
 const Navbar = () => {
-    const path=usePathname(); 
+    const path = usePathname(); 
+
+    useEffect(() => {
+        // Prevent scrolling on the body
+        document.body.style.overflow = 'hidden';
+        return () => {
+            // Re-enable scrolling when the component is unmounted
+            document.body.style.overflow = 'auto';
+        };
+    }, []);
+
     const menuItem = [
         {
             name: 'Home', 
@@ -31,13 +42,14 @@ const Navbar = () => {
             link: 'https://www.linkedin.com/in/cataladev/'
         }
     ];
+
     return(
-        <div className = 'flex justify-between p-4 items-center h-12 bg-blue-500 text-white relative shadow-2xl font-mono'>  
+        <div className='flex justify-between p-4 items-center h-12 bg-blue-500 text-white shadow-2xl font-mono fixed top-0 left-0 w-full z-50'>  
             <div> 
-                <h1 className = 'font-mono text-xl'> Carlos Catala </h1> {/* Add spinny stuff or something, maybe replace for a picture.*/}
+                <h1 className='font-mono text-xl'> Carlos Catala </h1> {/* Add spinny stuff or something, maybe replace for a picture.*/}
             </div>
             <div>
-                <ul className = 'flex '>
+                <ul className='flex '>
                     {
                     menuItem.map(menu => {
                             const isActive = path === menu.link;
