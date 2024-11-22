@@ -48,7 +48,6 @@ const skills: Skills = {
     {name: 'Drizzle', logo: '/drizzle.jpg'},
     {name: 'Docker', logo: '/docker.svg'},
     {name: 'Supabase', logo: '/supabase.svg'},
-
     // Add more tools here  if time comes
   ],
 };
@@ -62,13 +61,13 @@ export default function Home() {
           After working on projects and gaining experience this is what I have learnt.
         </p>
       </div>
-      <div className="flex flex-col items-center mt-10 space-y-8">
+      <div className="flex flex-col items-center mt-10 space-y-4 w-full">
         {Object.keys(skills).map((category) => (
           <div key={category} className="m-4 p-4 border rounded-lg w-full max-w-4xl">
-            <div className="flex justify-center mb-4">
+            <div className="flex justify-center">
               <h2 className="text-2xl font-mono">{category}</h2>
             </div>
-            <div className="flex flex-wrap justify-center">
+            <div className="flex flex-wrap justify-around">
               {skills[category as keyof Skills].map((skill: SkillCategory) => (
                 <div key={skill.name} className="m-2">
                   <Image src={skill.logo} alt={skill.name} title={skill.name} width={48} height={48} className="w-12 h-12" />
