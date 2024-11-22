@@ -2,7 +2,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-
+import Image from 'next/image';
 const Navbar = () => {
     const path=usePathname(); 
     const menuItem = [
@@ -23,10 +23,6 @@ const Navbar = () => {
             link: '/experience'
         },
         {
-            name: 'Resume',
-            link: '/resume.pdf'
-        },
-        {
             name: 'Github',
             link: 'https://github.com/cataladev'
         },
@@ -45,11 +41,20 @@ const Navbar = () => {
                     {
                     menuItem.map(menu => {
                             const isActive = path === menu.link;
-                            return(<li key = {menu.link}> 
-                            <Link href = {menu.link} className = {isActive?"m-2":"m-2"}>{menu.name}</Link > {/* Add hover effect and different color based on what is active */} 
-                            </li>
-                    )})
-                    }
+                            return(
+                                <li key={menu.link}> 
+                                    <Link href={menu.link} className={isActive ? "m-2" : "m-2"}>
+                                        {menu.name === 'LinkedIn' ? (
+                                            <Image src="/linkedin.svg" alt="LinkedIn" width={25} height={25} className="inline-block" />
+                                        ) : menu.name === 'Github' ? (
+                                            <Image src="/github-mark.svg" alt="Github" width={25} height={25} className="inline-block" />
+                                        ) : (
+                                            menu.name
+                                        )}
+                                    </Link>
+                                </li>
+                            )
+                    })}
                 </ul>
             </div>
         </div>
