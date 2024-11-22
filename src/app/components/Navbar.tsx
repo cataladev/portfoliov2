@@ -28,9 +28,9 @@ const Navbar = () => {
         }
     ];
     return(
-        <div className = 'flex justify-between p-3 items-center h-16 bg-white text-black relative shadow-sm font-mono'>  
+        <div className = 'flex justify-between p-4 items-center h-12 bg-blue-500 text-white relative shadow-2xl font-mono'>  
             <div> 
-                <h1 className = 'font-bold text-xl'> Carlos Catala </h1>
+                <h1 className = 'font-mono text-xl'> Carlos Catala </h1> {/* Add spinny stuff or something, maybe replace for a picture.*/}
             </div>
             <div>
                 <ul className = 'flex '>
@@ -38,7 +38,7 @@ const Navbar = () => {
                     menuItem.map(menu => {
                             const isActive = path === menu.link;
                             return(<li key = {menu.link}> 
-                            <Link href = {menu.link} className = {isActive?"m-2 to-blue-900":"m-2"}>{menu.name}</Link> 
+                            <Link href = {menu.link} className = {isActive?"m-2":"m-2  to-blue-900 "}>{menu.name}</Link> 
                             </li>
                     )})
                     }
