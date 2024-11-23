@@ -61,7 +61,7 @@ export default function Home() {
           After working on projects and gaining experience this is what I have learnt.
         </p>
       </div>
-      <div className="flex flex-col items-center mt-10 space-y-4 w-full">
+      <div className="flex flex-col items-center mt-10 gap-1 w-full">
         {Object.keys(skills).map((category) => (
           <div key={category} className="m-4 p-4 border rounded-lg w-full max-w-4xl">
             <div className="flex justify-center">
