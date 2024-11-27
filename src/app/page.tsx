@@ -16,11 +16,12 @@ export default function Home() {
 
       <div className="mt-16 flex space-x-8 items-center">
 
+        
         <Link href="/projects" className="text-center bg-blue-500 hover:bg-blue-700 font-mono py-3 px-8 rounded-3xl">
           Projects
         </Link>
-        <Link href="/skills" className="text-center bg-blue-500 hover:bg-blue-700 font-mono py-3 px-8 rounded-3xl">
-          Skills
+        <Link href="/resume.pdf" className="text-center bg-blue-500 hover:bg-blue-700 font-mono py-3 px-8 rounded-3xl">
+          Resume
         </Link>
       </div>
     </div>
