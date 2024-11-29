@@ -54,23 +54,23 @@ const skills: Skills = {
 
 export default function Home() {
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center">
-      <div className="text-center mt-10">
-        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-mono">Skills</h1>
-        <p className="mt-4 text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-mono">
+    <div className="min-h-screen flex flex-col items-center justify-center pt-16">
+      <div className="text-center mt-4">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-mono">Skills</h1>
+        <p className="mt-2 text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl font-mono">
           After working on projects and gaining experience this is what I have learnt.
         </p>
       </div>
-      <div className="flex flex-col items-center mt-10 gap-1 w-full">
+      <div className="flex flex-col items-center mt-4 gap-1 w-full">
         {Object.keys(skills).map((category) => (
-          <div key={category} className="m-4 p-4 border rounded-lg w-full max-w-4xl">
+          <div key={category} className="m-2 p-2 border rounded-lg w-full max-w-4xl">
             <div className="flex justify-center">
-              <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-mono">{category}</h2>
+              <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-mono">{category}</h2>
             </div>
-            <div className="flex flex-wrap justify-around">
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 justify-items-center">
               {skills[category as keyof Skills].map((skill: SkillCategory) => (
-                <div key={skill.name} className="m-2">
-                  <Image src={skill.logo} alt={skill.name} title={skill.name} width={48} height={48} className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 xl:w-28 xl:h-28" />
+                <div key={skill.name} className="m-1">
+                  <Image src={skill.logo} alt={skill.name} title={skill.name} width={40} height={40} className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 xl:w-18 xl:h-18" />
                 </div>
               ))}
             </div>
