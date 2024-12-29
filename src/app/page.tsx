@@ -18,7 +18,7 @@ export default function Home() {
         <Link href="/projects" className="text-center bg-blue-500 hover:bg-blue-700 font-mono py-3 px-8 rounded-3xl text-base sm:text-lg md:text-xl lg:text-2xl">
           Projects
         </Link>
-        <Link href="/resume.pdf" className="text-center bg-blue-500 hover:bg-blue-700 font-mono py-3 px-8 rounded-3xl text-base sm:text-lg md:text-xl lg:text-2xl">
+        <Link href="/resume.pdf" target= "_blank" className="text-center bg-blue-500 hover:bg-blue-700 font-mono py-3 px-8 rounded-3xl text-base sm:text-lg md:text-xl lg:text-2xl">
           Resume
         </Link>
       </div>
