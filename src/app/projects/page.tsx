@@ -95,7 +95,9 @@ export default function Projects() {
               </div>
               {project.link && (
                 <a href={project.link} target="_blank" rel="noopener noreferrer" className="text-blue-500 underline mt-2">
+                  <button>
                   Visit
+                  </button>
                 </a>
               )}
             </div>
