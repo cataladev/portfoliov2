@@ -13,7 +13,7 @@ const experiences: Experience[] = [
   { title: 'Crowning Games', description: 'Worked as a Game Programming Intern, I was in charge of how enemies AI worked.', date: '2024' },
   { title: 'UCF', description: 'Started my degree in Computer Science.', date: '2024' },
   { title: 'ShellHacks', description: 'I attended shellhacks, my first hackathon.', date: '2024' },
-  { title: 'KnightHacks Organizer', description: 'I became an organizer for KnightHacks VIII.', date: '2024' },
+  { title: 'KnightHacks Organizer', description: 'I became an organizer for Knight Hacks VIII.', date: '2024' },
   // Add more experiences here
 ].reverse();
 
