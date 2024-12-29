@@ -19,15 +19,12 @@ export const metadata: Metadata = {
   description: "Carlos Catala is a undergraduate student at the University of Central Florida and an aspiring software engineer.",
   keywords:[
         "Carlos Catala",
+        "Software Engineer",
         "UCF",
         "University of Central Florida",
-        "Student",
-        "Software Engineer",
+        "Knight Hacks",
         "Web Development",
-        "KnightHacks",
-        "Hackathons",
-        "Programming",
-        "Fullstack",
+        "Full stack",
     ],
     openGraph: {
       type: "website",
@@ -35,6 +32,7 @@ export const metadata: Metadata = {
       description:
       "Carlos Catala is a undergraduate student at the University of Central Florida and an aspiring software engineer.",
       url: "https://catala.dev",
+      images: [{ url: "https://catala.dev/glorp.png" }],
       },
 };
 
@@ -44,7 +42,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="bg-blue-500">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
