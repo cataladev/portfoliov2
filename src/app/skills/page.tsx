@@ -54,20 +54,20 @@ const skills: Skills = {
 
 export default function Home() {
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center pt-16">
-      <div className="text-center mt-4">
-        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-mono">Skills</h1>
-        <p className="mt-2 text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl font-mono">
+    <div className="min-h-screen flex flex-col items-center justify-center">
+      <div className="text-center mt-10">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-mono">Skills</h1>
+        <p className="mt-4 text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-mono">
           After working on projects and gaining experience this is what I have learnt.
         </p>
       </div>
-      <div className="flex flex-col items-center mt-4 gap-1 w-full">
+      <div className="flex flex-col items-center mt-4 gap-1 w-full px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12">
         {Object.keys(skills).map((category) => (
-          <div key={category} className="m-2 p-2 border rounded-lg w-full max-w-4xl">
+          <div key={category} className="m-2 p-4 sm:p-6 md:p-8 lg:p-10 xl:p-12 border rounded-lg w-full max-w-4xl">
             <div className="flex justify-center">
               <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-mono">{category}</h2>
             </div>
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 justify-items-center">
+            <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-2 sm:gap-3 md:gap-4 lg:gap-5 xl:gap-6 justify-items-center">
               {skills[category as keyof Skills].map((skill: SkillCategory) => (
                 <div key={skill.name} className="m-1">
                   <Image src={skill.logo} alt={skill.name} title={skill.name} width={40} height={40} className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 xl:w-18 xl:h-18" />

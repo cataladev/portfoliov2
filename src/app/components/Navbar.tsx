@@ -83,11 +83,11 @@ const Navbar = () => {
                                 <li key={menu.link} className='menu-item m-2 sm:m-3 md:m-4 lg:m-5 xl:m-6'> 
                                     <Link href={menu.link} className={isActive ? "text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl" : "text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl"} target={menu.name === 'LinkedIn' || menu.name === 'Github' ? "_blank" : "_self"} rel={menu.name === 'LinkedIn' || menu.name === 'Github' ? "noopener noreferrer" : undefined} onClick={closeMenu}>
                                         {menu.name === 'LinkedIn' ? (
-                                            <Image src="/linkedin.svg" alt="LinkedIn" width={25} height={25} className="inline-block" />
+                                            <Image src="/linkedin.svg" alt="LinkedIn" width={30} height={30} className="inline-block pt-2" />
                                         ) : menu.name === 'Github' ? (
-                                            <Image src="/github-mark.svg" alt="Github" width={25} height={25} className="inline-block" />
+                                            <Image src="/github-mark.svg" alt="Github" width={30} height={30} className="inline-block pt-2" />
                                         ) : (
-                                            menu.name
+                                            <button className="bg-blue-500 text-white p-2 rounded-full lg:bg-transparent w-full lg:w-auto text-left">{menu.name}</button>
                                         )}
                                     </Link>
                                 </li>
@@ -96,10 +96,10 @@ const Navbar = () => {
                 </ul>
                 <div className='flex lg:hidden justify-center mt-4'>
                     <Link href="https://github.com/cataladev" target="_blank" rel="noopener noreferrer" onClick={closeMenu}>
-                        <Image src="/github-mark.svg" alt="Github" width={25} height={25} className="inline-block mx-2" />
+                        <Image src="/github-mark.svg" alt="Github" width={30} height={30} className="inline-block mx-2" />
                     </Link>
                     <Link href="https://www.linkedin.com/in/cataladev/" target="_blank" rel="noopener noreferrer" onClick={closeMenu}>
-                        <Image src="/linkedin.svg" alt="LinkedIn" width={25} height={25} className="inline-block mx-2" />
+                        <Image src="/linkedin.svg" alt="LinkedIn" width={30} height={30} className="inline-block mx-2" />
                     </Link>
                 </div>
             </div>
