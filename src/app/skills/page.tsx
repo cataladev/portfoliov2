@@ -69,7 +69,7 @@ export default function Home() {
             </div>
             <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-2 sm:gap-3 md:gap-4 lg:gap-5 xl:gap-6 justify-items-center">
               {skills[category as keyof Skills].map((skill: SkillCategory) => (
-                <div key={skill.name} className="m-1 transform transition hover:scale-130">
+                <div key={skill.name} className="m-1 transform transition hover:scale-110">
                   <Image src={skill.logo} alt={skill.name} title={skill.name} width={40} height={40} className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 xl:w-18 xl:h-18" />
                 </div>
               ))}
