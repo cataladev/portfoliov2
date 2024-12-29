@@ -63,8 +63,8 @@ export default function Home() {
       </div>
       <div className="flex flex-col items-center mt-4 gap-1 w-full px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12">
         {Object.keys(skills).map((category) => (
-          <div key={category} className="m-2 p-4 sm:p-6 md:p-8 lg:p-10 xl:p-12 border rounded-lg w-full max-w-4xl">
-            <div className="flex justify-center">
+          <div key={category} className="m-2 p-2 sm:p-3 md:p-4 lg:p-5 xl:p-6 border rounded-lg w-full max-w-4xl">
+            <div className="flex justify-center mb-4">
               <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-mono">{category}</h2>
             </div>
             <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-2 sm:gap-3 md:gap-4 lg:gap-5 xl:gap-6 justify-items-center">
