@@ -56,7 +56,7 @@ export default function Home() {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center">
       <div className="text-center mt-10">
-        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-mono">Skills</h1>
+        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-mono pt-4">Skills</h1>
         <p className="mt-4 text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-mono">
           After working on projects and gaining experience this is what I have learnt.
         </p>
@@ -69,7 +69,7 @@ export default function Home() {
             </div>
             <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-2 sm:gap-3 md:gap-4 lg:gap-5 xl:gap-6 justify-items-center">
               {skills[category as keyof Skills].map((skill: SkillCategory) => (
-                <div key={skill.name} className="m-1">
+                <div key={skill.name} className="m-1 transform transition hover:scale-130">
                   <Image src={skill.logo} alt={skill.name} title={skill.name} width={40} height={40} className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 xl:w-18 xl:h-18" />
                 </div>
               ))}
