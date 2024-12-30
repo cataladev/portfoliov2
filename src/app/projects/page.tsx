@@ -1,6 +1,28 @@
 'use client'
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Carlos Catala | Projects",
+  description: "Carlos Catala is a undergraduate student at the University of Central Florida and an aspiring software engineer.",
+  keywords:[
+        "Carlos Catala",
+        "Software Engineer",
+        "UCF",
+        "University of Central Florida",
+        "Knight Hacks",
+        "Web Development",
+        "Full stack",
+    ],
+    openGraph: {
+      type: "website",
+      title: "Carlos Catala | Projects",
+      description:
+      "My projects that I have worked on as a software engineer and undergraduate student at the University of Central Florida.",
+      url: "https://catala.dev/projects",
+      },
+};
 
 type Project = {
   name: string;

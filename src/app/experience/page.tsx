@@ -1,4 +1,26 @@
 'use client'
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Carlos Catala | Experience",
+  description: "Carlos Catala is a undergraduate student at the University of Central Florida and an aspiring software engineer.",
+  keywords:[
+        "Carlos Catala",
+        "Software Engineer",
+        "UCF",
+        "University of Central Florida",
+        "Knight Hacks",
+        "Web Development",
+        "Full stack",
+    ],
+    openGraph: {
+      type: "website",
+      title: "Carlos Catala | Experience",
+      description:
+      "My experience as a software engineer and undergraduate student at the University of Central Florida.",
+      url: "https://catala.dev/experience",
+      },
+};
 
 type Experience = {
   title: string;
