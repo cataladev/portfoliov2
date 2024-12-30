@@ -1,28 +1,7 @@
 'use client'
 import Image from 'next/image';
+import Link from 'next/link';
 import { useEffect, useState } from 'react';
-import { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "Carlos Catala | Projects",
-  description: "Carlos Catala is a undergraduate student at the University of Central Florida and an aspiring software engineer.",
-  keywords:[
-        "Carlos Catala",
-        "Software Engineer",
-        "UCF",
-        "University of Central Florida",
-        "Knight Hacks",
-        "Web Development",
-        "Full stack",
-    ],
-    openGraph: {
-      type: "website",
-      title: "Carlos Catala | Projects",
-      description:
-      "My projects that I have worked on as a software engineer and undergraduate student at the University of Central Florida.",
-      url: "https://catala.dev/projects",
-      },
-};
 
 type Project = {
   name: string;
@@ -101,26 +80,26 @@ export default function Projects() {
         {projects.map((project, index) => (
           <div
             key={project.name}
-            className={`relative w-full h-64 p-6 border rounded-lg overflow-hidden transform transition-transform duration-500 bg-blue-500 hover:bg-blue-600 ${flipped[index] ? 'rotate-y-180' : ''}`}
+            className={`relative w-full h-72 p-4 border rounded-lg overflow-hidden transform transition-transform duration-500 bg-blue-500 hover:bg-blue-600 ${flipped[index] ? 'rotate-y-180' : ''}`}
             onClick={() => handleFlip(index)}
           >
-            <div className="absolute inset-0 backface-hidden flex flex-col items-center justify-center bg-blue-600">
+            <div className="absolute inset-0 backface-hidden flex flex-col items-center justify-center bg-blue-600 p-4">
               <Image src={project.image} alt={project.name} title={project.name} width={128} height={128} className="w-20 h-20 sm:w-28 sm:h-28 md:w-36 md:h-36" />
               <h2 className="text-base sm:text-lg md:text-xl lg:text-2xl font-mono mt-4">{project.name}</h2>
             </div>
-            <div className="absolute inset-0 backface-hidden flex flex-col items-center justify-between rotate-y-180 bg-gray-800 text-white opacity-0 hover:opacity-100 transition-opacity duration-500 p-6">
+            <div className="absolute inset-0 backface-hidden flex flex-col items-center justify-between rotate-y-180 bg-gray-800 text-white opacity-0 hover:opacity-100 transition-opacity duration-500 p-4">
               <p className="text-xs sm:text-sm md:text-base lg:text-lg font-mono" style={{ fontSize: `${fontSizes[index]}px` }}>{project.description}</p>
               <div className="mt-2 flex flex-wrap justify-center gap-2">
                 {project.skills.map(skill => (
-                  <span key={skill} className="bg-blue-600 text-white px-2 py-1 rounded-full text-sm sm:text-base md:text-lg lg:text-xl">{skill}</span>
+                  <span key={skill} className="bg-blue-600 text-white px-2 py-1 rounded-full text-xs sm:text-sm md:text-base lg:text-lg">{skill}</span>
                 ))}
               </div>
               {project.link && (
-                <a href={project.link} target="_blank" rel="noopener noreferrer" className="text-blue-500 underline mt-2">
-                  <button>
-                  Visit
+                <Link href={project.link} target="_blank" rel="noopener noreferrer" className="mt-2">
+                  <button className="bg-green-500 text-white px-3 py-1 rounded-full text-xs sm:text-sm md:text-base lg:text-lg hover:bg-green-700">
+                    Visit
                   </button>
-                </a>
+                </Link>
               )}
             </div>
           </div>

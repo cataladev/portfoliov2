@@ -1,8 +1,9 @@
 'use client';
 import React, { useState, useEffect } from 'react';
-import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import Link from 'next/link';
 import Image from 'next/image';
+import { TransitionLink } from './TransitionLink';
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -63,9 +64,9 @@ const Navbar = () => {
     }, [isOpen]);
 
     return(
-        <div className='navbar flex justify-between p-4 items-center h-12 bg-transparent lg:bg-blue-500 text-white shadow-2xl font-mono fixed top-0 left-0 w-full z-50'>  
+        <div className='navbar flex justify-between py-6 px-4 items-center h-16 bg-transparent lg:bg-blue-500 text-white shadow-2xl font-mono fixed top-0 left-0 w-full z-50'>  
             <div className='hidden lg:block'> 
-                <h1 className='font-mono text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl'> Carlos Catala </h1>
+                <h1 className='font-mono text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl'> Carlos Catala </h1>
             </div>
             <div className='block lg:hidden'>
                 <button onClick={toggleMenu} className='text-white focus:outline-none'>
@@ -75,31 +76,37 @@ const Navbar = () => {
                 </button>
             </div>
             <div className={`lg:flex ${isOpen ? 'fixed top-0 left-0 w-48 h-full bg-blue-500 z-40' : 'hidden'} lg:static lg:w-auto lg:h-auto lg:bg-transparent`}>
-                <ul className='flex flex-col lg:flex-row lg:static lg:bg-transparent lg:shadow-none lg:p-0 p-4 h-full overflow-y-auto'>
+                <ul className='flex flex-col lg:flex-row lg:static lg:bg-transparent lg:shadow-none lg:p-0 p-4 h-full overflow-y-auto items-center'>
                     {
                     menuItem.map(menu => {
                             const isActive = path === menu.link;
                             return(
-                                <li key={menu.link} className='menu-item m-2 sm:m-3 md:m-4 lg:m-5 xl:m-6'> 
-                                    <Link href={menu.link} className={isActive ? "text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl" : "text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl"} target={menu.name === 'LinkedIn' || menu.name === 'Github' ? "_blank" : "_self"} rel={menu.name === 'LinkedIn' || menu.name === 'Github' ? "noopener noreferrer" : undefined} onClick={closeMenu}>
+                                <li key={menu.link} className='menu-item m-1 sm:m-2 md:m-3 lg:m-4 xl:m-5'> 
+                                    <div className={`${isActive ? "underline" : ""} text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl hover:opacity-80`}>
                                         {menu.name === 'LinkedIn' ? (
-                                            <Image src="/linkedin.svg" alt="LinkedIn" width={30} height={30} className="inline-block pt-2" />
+                                            <Link href={menu.link} target="_blank" rel="noopener noreferrer" onClick={closeMenu}>
+                                                <Image src="/linkedin.svg" alt="LinkedIn" width={30} height={30} className="inline-block align-middle" />
+                                            </Link>
                                         ) : menu.name === 'Github' ? (
-                                            <Image src="/github-mark.svg" alt="Github" width={30} height={30} className="inline-block pt-2" />
+                                            <Link href={menu.link} target="_blank" rel="noopener noreferrer" onClick={closeMenu}>
+                                                <Image src="/github-mark.svg" alt="Github" width={30} height={30} className="inline-block align-middle" />
+                                            </Link>
                                         ) : (
-                                            <button className="bg-blue-500 text-white p-2 rounded-full lg:bg-transparent w-full lg:w-auto text-left">{menu.name}</button>
+                                            <TransitionLink href={menu.link} onClick={closeMenu}>
+                                                <span className="bg-blue-500 text-white p-1 rounded-full lg:bg-transparent w-full lg:w-auto text-left">{menu.name}</span>
+                                            </TransitionLink>
                                         )}
-                                    </Link>
+                                    </div>
                                 </li>
                             )
                     })}
                 </ul>
                 <div className='flex lg:hidden justify-center mt-4'>
                     <Link href="https://github.com/cataladev" target="_blank" rel="noopener noreferrer" onClick={closeMenu}>
-                        <Image src="/github-mark.svg" alt="Github" width={30} height={30} className="inline-block mx-2" />
+                        <Image src="/github-mark.svg" alt="Github" width={30} height={30} className="inline-block align-middle mx-2" />
                     </Link>
                     <Link href="https://www.linkedin.com/in/cataladev/" target="_blank" rel="noopener noreferrer" onClick={closeMenu}>
-                        <Image src="/linkedin.svg" alt="LinkedIn" width={30} height={30} className="inline-block mx-2" />
+                        <Image src="/linkedin.svg" alt="LinkedIn" width={30} height={30} className="inline-block align-middle mx-2" />
                     </Link>
                 </div>
             </div>
