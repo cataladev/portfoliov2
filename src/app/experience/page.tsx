@@ -40,9 +40,9 @@ const experiences: Experience[] = [
 
 export default function ExperiencePage() {
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center">
-      <div className="text-center mt-10">
-        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-mono pt-4">Experience</h1>
+    <div className=" min-h-screen flex flex-col items-center justify-center">
+      <div className="text-center mt-20">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-mono">Experience</h1>
         <p className="mt-4 text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-mono">
           A timeline of my professional journey.
         </p>

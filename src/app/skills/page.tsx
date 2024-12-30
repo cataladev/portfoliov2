@@ -78,7 +78,7 @@ const skills: Skills = {
 export default function Home() {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center">
-      <div className="text-center mt-10">
+      <div className="text-center mt-20">
         <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-mono pt-4">Skills</h1>
         <p className="mt-4 text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-mono">
           After working on projects and gaining experience this is what I have learnt.
