@@ -9,7 +9,7 @@ export default function Home() {
         <h1 className="text-center"> Hey, I&apos;m Carlos! </h1>
       </div>
       
-      <div className="flex text-lg sm:text-xl md:text-2xl lg:text-3xl mt-8 text-center"> 
+      <div className=" flex text-lg sm:text-xl md:text-2xl lg:text-3xl mt-8 text-center animate-pulse"> 
         <h1> I&apos;m an undergraduate student at the University of Central Florida.</h1>
       </div>
 
