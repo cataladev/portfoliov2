@@ -82,7 +82,7 @@ const Navbar = () => {
                             const isActive = path === menu.link;
                             return(
                                 <li key={menu.link} className='menu-item m-1 sm:m-2 md:m-3 lg:m-4 xl:m-5'> 
-                                    <div className={`${isActive ? "underline" : ""} text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl hover:opacity-80`}>
+                                    <div className={`${isActive ? "underline scale-110 font-bold" : ""} text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl hover:opacity-80 transition-transform duration-200`}>
                                         {menu.name === 'LinkedIn' ? (
                                             <Link href={menu.link} target="_blank" rel="noopener noreferrer" onClick={closeMenu}>
                                                 <Image src="/linkedin.svg" alt="LinkedIn" width={30} height={30} className="invert-0 inline-block align-middle" />
