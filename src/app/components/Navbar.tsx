@@ -85,11 +85,11 @@ const Navbar = () => {
                                     <div className={`${isActive ? "underline" : ""} text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl hover:opacity-80`}>
                                         {menu.name === 'LinkedIn' ? (
                                             <Link href={menu.link} target="_blank" rel="noopener noreferrer" onClick={closeMenu}>
-                                                <Image src="/linkedin.svg" alt="LinkedIn" width={30} height={30} className="inline-block align-middle" />
+                                                <Image src="/linkedin.svg" alt="LinkedIn" width={30} height={30} className="invert-0 inline-block align-middle" />
                                             </Link>
                                         ) : menu.name === 'Github' ? (
                                             <Link href={menu.link} target="_blank" rel="noopener noreferrer" onClick={closeMenu}>
-                                                <Image src="/github-mark.svg" alt="Github" width={30} height={30} className="inline-block align-middle" />
+                                                <Image src="/github-mark.svg" alt="Github" width={30} height={30} className="invert-0 inline-block align-middle" />
                                             </Link>
                                         ) : (
                                             <TransitionLink href={menu.link} onClick={closeMenu}>
@@ -101,14 +101,6 @@ const Navbar = () => {
                             )
                     })}
                 </ul>
-                <div className='flex lg:hidden justify-center mt-4'>
-                    <Link href="https://github.com/cataladev" target="_blank" rel="noopener noreferrer" onClick={closeMenu}>
-                        <Image src="/github-mark.svg" alt="Github" width={30} height={30} className="inline-block align-middle mx-2" />
-                    </Link>
-                    <Link href="https://www.linkedin.com/in/cataladev/" target="_blank" rel="noopener noreferrer" onClick={closeMenu}>
-                        <Image src="/linkedin.svg" alt="LinkedIn" width={30} height={30} className="inline-block align-middle mx-2" />
-                    </Link>
-                </div>
             </div>
         </div>
     )

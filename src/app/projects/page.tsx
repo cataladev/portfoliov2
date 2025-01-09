@@ -1,7 +1,28 @@
-'use client'
-import Image from 'next/image';
-import Link from 'next/link';
-import { useEffect, useState } from 'react';
+import ProjectsClientComponent from '../components/ProjectsClientComponent';
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Carlos Catala | Projects",
+  description: "Carlos Catala is a undergraduate student at the University of Central Florida and an aspiring software engineer.",
+  keywords:[
+        "Carlos Catala",
+        "Software Engineer",
+        "UCF",
+        "University of Central Florida",
+        "Knight Hacks",
+        "Web Development",
+        "Full stack",
+    ],
+    openGraph: {
+      type: "website",
+      title: "Carlos Catala | Projects",
+      description:
+      "My projects that I have worked on as a software engineer and undergraduate student at the University of Central Florida.",
+      url: "https://catala.dev/projects",
+      images: [{ url: "https://catala.dev/" }],
+      },
+};
+
 
 type Project = {
   name: string;
@@ -43,31 +64,7 @@ const projects: Project[] = [
   // Add more projects here
 ];
 
-const calculateFontSize = (text: string, maxLength: number, minFontSize: number, maxFontSize: number) => {
-  const length = text.length;
-  if (length > maxLength) {
-    return minFontSize;
-  }
-  return maxFontSize - ((maxFontSize - minFontSize) * (length / maxLength));
-};
-
-export default function Projects() {
-  const [fontSizes, setFontSizes] = useState<number[]>([]);
-  const [flipped, setFlipped] = useState<boolean[]>(new Array(projects.length).fill(false));
-
-  useEffect(() => {
-    const sizes = projects.map(project => calculateFontSize(project.description, 100, 14, 20));
-    setFontSizes(sizes);
-  }, []);
-
-  const handleFlip = (index: number) => {
-    setFlipped(prev => {
-      const newFlipped = [...prev];
-      newFlipped[index] = !newFlipped[index];
-      return newFlipped;
-    });
-  };
-
+export default function ProjectsComponent() {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center pt-16 px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12">
       <div className="text-center mt-4">
@@ -76,35 +73,7 @@ export default function Projects() {
           Here are some of the projects I have worked on.
         </p>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mt-10 w-full">
-        {projects.map((project, index) => (
-          <div
-            key={project.name}
-            className={`relative w-full h-72 p-4 border rounded-lg overflow-hidden transform transition-transform duration-500 bg-blue-500 hover:bg-blue-600 ${flipped[index] ? 'rotate-y-180' : ''}`}
-            onClick={() => handleFlip(index)}
-          >
-            <div className="absolute inset-0 backface-hidden flex flex-col items-center justify-center bg-blue-600 p-4">
-              <Image src={project.image} alt={project.name} title={project.name} width={128} height={128} className="w-20 h-20 sm:w-28 sm:h-28 md:w-36 md:h-36" />
-              <h2 className="text-base sm:text-lg md:text-xl lg:text-2xl font-mono mt-4">{project.name}</h2>
-            </div>
-            <div className="absolute inset-0 backface-hidden flex flex-col items-center justify-between rotate-y-180 bg-gray-800 text-white opacity-0 hover:opacity-100 transition-opacity duration-500 p-4">
-              <p className="text-xs sm:text-sm md:text-base lg:text-lg font-mono" style={{ fontSize: `${fontSizes[index]}px` }}>{project.description}</p>
-              <div className="mt-2 flex flex-wrap justify-center gap-2">
-                {project.skills.map(skill => (
-                  <span key={skill} className="bg-blue-600 text-white px-2 py-1 rounded-full text-xs sm:text-sm md:text-base lg:text-lg">{skill}</span>
-                ))}
-              </div>
-              {project.link && (
-                <Link href={project.link} target="_blank" rel="noopener noreferrer" className="mt-2">
-                  <button className="bg-green-500 text-white px-3 py-1 rounded-full text-xs sm:text-sm md:text-base lg:text-lg hover:bg-green-700">
-                    Visit
-                  </button>
-                </Link>
-              )}
-            </div>
-          </div>
-        ))}
-      </div>
+      <ProjectsClientComponent projects={projects} />
     </div>
   );
 }

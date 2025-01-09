@@ -3,7 +3,7 @@
 @tailwind utilities;
 :root {
   --background: #1e3a8a;
-  --foreground: #171717;
+  --foreground: #ededed;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -19,12 +19,12 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   transition-property: opacity, transform, filter;
   transition-timing-function: ease-in-out;
-  transition-duration: 500ms;
+  transition-duration: 300ms;
 }
 
 .page-transition {
   opacity: 0;
   background: var(--background);
   transform: translateY(40px);
-  filter: blur(12px);
+  filter: blur(8px);
 }
