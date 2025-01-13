@@ -43,7 +43,7 @@ const projects: Project[] = [
   {
     name: 'Spark-A-Hack',
     image: '/spark-a-hack.png',
-    description: 'Uses AI to suggest tailored project ideas to hackathon participants based on their interests, skills, and challenges they want to tackle.',
+    description: 'A way to suggest project ideas to hackathon participants based on their interests and skills they want to tackle.',
     link: 'https://devpost.com/software/spark-a-hack',
     skills: ['React', 'Tailwind', 'Gemini API', 'TRPC'],
   },
@@ -68,8 +68,8 @@ export default function ProjectsComponent() {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center pt-16 px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12">
       <div className="text-center mt-4">
-        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-mono">Projects</h1>
-        <p className="mt-4 text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-mono">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-mono animate-delay-150 animate-fade-up">Projects</h1>
+        <p className="mt-4 text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-mono animate-delay-150 animate-fade-up">
           Here are some of the projects I have worked on.
         </p>
       </div>

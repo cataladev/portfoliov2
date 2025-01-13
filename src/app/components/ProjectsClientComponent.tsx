@@ -18,7 +18,7 @@ type ProjectsClientComponentProps = {
 export default function ProjectsClientComponent({ projects }: ProjectsClientComponentProps) {
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mt-10 w-full">
+    <div className="animate-delay-150 animate-fade-up grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mt-10 w-full">
       {projects.map((project, index) => (
         <div
           key={project.name}
@@ -32,12 +32,12 @@ export default function ProjectsClientComponent({ projects }: ProjectsClientComp
             <p className="text-xs sm:text-sm md:text-base lg:text-lg font-mono">{project.description}</p>
             <div className="mt-2 flex flex-wrap justify-center gap-2">
               {project.skills.map(skill => (
-                <span key={skill} className="bg-blue-600 text-white px-1 py-1 rounded-md text-xs sm:text-sm md:text-base lg:text-lg">{skill}</span>
+                <span key={skill} className="bg-blue-600 text-white px-2 py-1 rounded-full text-xs sm:text-sm md:text-base lg:text-lg">{skill}</span>
               ))}
             </div>
             {project.link && (
               <Link href={project.link} target="_blank" rel="noopener noreferrer" className="mt-2">
-                <button className="bg-green-500 text-white px-3 py-1 rounded-2xl text-xs sm:text-sm md:text-base lg:text-lg hover:bg-green-700">
+                <button className="bg-green-500 text-white px-3 py-1 rounded-full text-xs sm:text-sm md:text-base lg:text-lg hover:bg-green-700">
                   Visit
                 </button>
               </Link>
