@@ -17,14 +17,15 @@ export default function Home() {
         <Image src="/glorp.png" alt="gatito" width={150} height={150} className="mt-4 transition-transform duration-500 hover:animate-shake animate-infinite" />
       </div>
 
-      <div className="mt-16 flex flex-col md:flex-row md:space-x-8 items-center">
+      <div className="animate-fade-up mt-16 flex flex-col md:flex-row md:space-x-8 space-y-8 md:space-y-0 items-center">
         <TransitionLink href="/projects">
-          <span className="animate-fade-up text-center bg-blue-500 hover:bg-blue-700 font-mono py-4 px-8 rounded-3xl text-base sm:text-lg md:text-xl lg:text-2xl">Projects</span>
+          <span className="text-center bg-blue-500 hover:bg-blue-700 font-mono py-4 px-8 rounded-3xl text-base sm:text-lg md:text-xl lg:text-2xl">Projects</span>
         </TransitionLink>
         <TransitionLink href="/resume.pdf">
-          <span className="animate-fade-up text-center bg-blue-500 hover:bg-blue-700 font-mono py-4 px-8 rounded-3xl text-base sm:text-lg md:text-xl lg:text-2xl">Resume</span>
+          <span className="text-center bg-blue-500 hover:bg-blue-700 font-mono py-4 px-8 rounded-3xl text-base sm:text-lg md:text-xl lg:text-2xl">Resume</span>
         </TransitionLink>
       </div>
+
     </div>
   );
 }

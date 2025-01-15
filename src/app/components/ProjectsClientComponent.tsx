@@ -18,7 +18,7 @@ type ProjectsClientComponentProps = {
 export default function ProjectsClientComponent({ projects }: ProjectsClientComponentProps) {
 
   return (
-    <div className="animate-delay-150 animate-fade-up grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mt-10 w-full">
+    <div className="justify-center animate-delay-150 animate-fade-up grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mt-10 w-full">
       {projects.map((project, index) => (
         <div
           key={project.name}
