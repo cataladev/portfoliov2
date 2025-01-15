@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import FadeInWhenVisible from "../components/FadeWhenInvis"; 
 
 export const metadata: Metadata = {
   title: "Carlos Catala | Experience",
@@ -55,12 +56,14 @@ export default function ExperiencePage() {
               className="flex justify-center w-full my-8"
             >
               <div
-                className="relative w-full sm:w-3/4 p-4 border rounded-lg"
+                className="relative w-full sm:w-3/4 p-4 border rounded-lg animate-fade-up"
                 style={{ maxWidth: 'calc(100% - 2rem)' }}
               >
+                <FadeInWhenVisible>
                 <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-mono">{experience.title}</h2>
                 <p className="mt-2 text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-mono">{experience.description}</p>
                 <p className="mt-2 text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl font-mono text-gray-500">{experience.date}</p>
+                </FadeInWhenVisible>
               </div>
             </div>
           ))}
