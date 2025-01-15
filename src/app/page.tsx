@@ -9,7 +9,7 @@ export default function Home() {
         <h1 className="animate-delay-150 animate-fade-up text-center"> Hey, I&apos;m Carlos! </h1>
       </div>
       
-      <div className=" flex text-lg sm:text-xl md:text-2xl lg:text-3xl mt-8 text-center animate-delay-150 animate-fade-up" > 
+      <div className=" flex text-lg sm:text-xl sm:mx-4 md:text-2xl lg:text-3xl mt-8 text-center animate-delay-150 animate-fade-up" > 
         <h1> I&apos;m an undergraduate student at the University of Central Florida.</h1>
       </div>
 
