@@ -13,11 +13,11 @@ type Project = {
 
 const projects: Project[] = [
   {
-    name: 'catala.dev',
-    image: '/glorp.png',
-    description: 'The site you\'re on!',
-    link: 'https://catala.dev',
-    skills: ['Next', 'React', 'Tailwind CSS'],
+    name: 'kmodo.org',
+    image: '/kmodo.png',
+    description: 'Hackathons done differently. A platform to find, create, and participate in hackathons.',
+    link: 'https://kmodo.org',
+    skills: ['TypeScript', 'Tailwind', 'tRPC'],
   },
   {
     name: 'Spark-A-Hack',
